@@ -3,9 +3,337 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Responsive Navbar Tailwind + JS</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline text-blue-500">Hello world!</h1>
+  <body class="bg-[#1b1a1f]">
+    <header class="absolute top-0 left-0 w-full py-2 md:px-8 md:py-4 z-50">
+      <nav
+        class="relative z-50 flex justify-between items-center px-8 py-6 rounded-full md:rounded-full mx-auto mt-0 md:mt-6"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="public/images/logo.png" alt="Logo" class="w-10 h-10" />
+          <span class="text-white font-semibold text-3xl ml-3">Coffee</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul
+          id="desktop-menu"
+          class="hidden md:flex items-center gap-12 text-white text-sm font-medium bg-white/10 backdrop-blur-md rounded-full px-8 py-4"
+        >
+          <li>
+            <a href="#" class="hover:text-gray-300 border-white border-b-2"
+              >Home</a
+            >
+          </li>
+          <li><a href="#" class="hover:text-gray-300">Service</a></li>
+          <li><a href="#" class="hover:text-gray-300">Projects</a></li>
+          <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          id="menu-btn"
+          aria-label="Toggle menu"
+          class="block md:hidden focus:outline-none z-50 w-10 h-10 flex items-center justify-center"
+          type="button"
+        >
+          <svg
+            id="menu-open"
+            class="h-6 w-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+          <svg
+            id="menu-close"
+            class="h-6 w-6 text-white hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu (dengan tombol BOOK A CALL) -->
+        <div
+          id="mobile-menu"
+          class="hidden flex-col absolute top-full right-8 mt-2 bg-white/10 backdrop-blur-md rounded-xl px-6 py-4 w-48 text-white text-sm font-medium md:hidden"
+        >
+          <ul class="flex flex-col gap-4 mb-4">
+            <li>
+              <a href="#" class="block hover:text-[#a67c52]">Home</a>
+            </li>
+            <li><a href="#" class="block hover:text-[#a67c52]">Service</a></li>
+            <li><a href="#" class="block hover:text-[#a67c52]">Projects</a></li>
+            <li>
+              <a href="#" class="block hover:text-[#a67c52]">Contact Us</a>
+            </li>
+          </ul>
+          <a
+            href="#"
+            class="block bg-white text-black font-semibold text-sm px-5 py-2 rounded-full shadow hover:bg-gray-200 transition-all text-center"
+          >
+            BOOK A CALL
+          </a>
+        </div>
+
+        <!-- Desktop Book a Call Button -->
+        <a
+          href="#"
+          class="hidden md:flex bg-white text-black font-semibold text-sm px-5 py-2 rounded-full shadow hover:bg-gray-200 transition-all flex items-center gap-2"
+        >
+          BOOK A CALL
+        </a>
+      </nav>
+    </header>
+
+    <main class="px-0 md:px-8 py-0 md:py-8">
+      <section
+        id="hero"
+        class="relative flex flex-col justify-center items-center h-[500px] md:h-[650px] md:rounded-2xl bg-[url('/public/images/hero.jpg')] bg-cover bg-center overflow-hidden text-center"
+      >
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/30 md:rounded-2xl"></div>
+
+        <!-- Konten Utama -->
+        <div
+          class="relative z-10 flex flex-col justify-center items-center h-full max-w-4xl w-full text-white mx-auto px-4"
+        >
+          <!-- Judul -->
+          <div>
+            <h1
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 sm:mb-8"
+            >
+              Savor the <br />
+              Rich Aroma and Taste <br />
+              of Our Finest Coffee
+            </h1>
+          </div>
+
+          <!-- Kategori -->
+          <ul
+            class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-4 w-full md:w-auto"
+          >
+            <li>
+              <a
+                href="#"
+                class="bg-white/20 px-4 py-2 rounded-full text-sm border border-white inline-block hover:bg-white hover:text-[#a67c52] transition-colors"
+              >
+                Espresso
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="bg-white/20 px-4 py-2 rounded-full text-sm border border-white inline-block hover:bg-white hover:text-[#a67c52] transition-colors"
+              >
+                Latte
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="bg-white/20 px-4 py-2 rounded-full text-sm border border-white inline-block hover:bg-white hover:text-[#a67c52] transition-colors"
+              >
+                Cappuccino
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="bg-white/20 px-4 py-2 rounded-full text-sm border border-white inline-block hover:bg-white hover:text-[#a67c52] transition-colors"
+              >
+                Cold Brew
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="bg-white/20 px-4 py-2 rounded-full text-sm border border-white inline-block hover:bg-white hover:text-[#a67c52] transition-colors"
+              >
+                Mocha
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" class="bg-[#1b1a1f] text-white px-6 md:px-16 py-20">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12"
+        >
+          <!-- Text Content -->
+          <div class="w-full md:w-1/2 order-2 md:order-1">
+            <p class="text-sm text-white mb-2">
+              (01) <span class="font-bold">About Us</span>
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-semibold leading-tight mb-6">
+              Welcome to a space where<br />
+              <span class="text-white">aroma meets atmosphere</span>
+            </h2>
+            <p class="text-white/70 text-base leading-relaxed mb-8">
+              At our café, every cup tells a story. We serve more than just
+              coffee — we offer a cozy escape, a warm conversation, and a place
+              to slow down and savor the moment. Whether you're here to work,
+              unwind, or connect, you're always welcome.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition"
+            >
+              LEARN MORE
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div
+            class="w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[500px] order-2 md:order-2"
+          >
+            <div class="w-full h-full rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+                alt="Café Interior"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-24 max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p
+            class="text-sm tracking-wide uppercase text-[#c9a27e] font-semibold"
+          >
+            (03) Our Work
+          </p>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold leading-tight text-[#f5eee6] mt-2"
+          >
+            Explore the artistry and passion of our<br />
+            <span class="text-[#d4b089]">coffee portfolio</span>
+          </h2>
+          <p class="mt-4 text-[#e4d6c8]/80 max-w-xl mx-auto text-sm">
+            Embark on a visual journey through each crafted coffee moment —
+            every image reflects warmth and story.
+          </p>
+        </div>
+
+        <!-- Gallery Container -->
+        <div
+          id="gallery"
+          class="flex flex-col md:flex-row gap-5 transition-all duration-500"
+        >
+          <!-- Card 1 -->
+          <div
+            class="card active basis-full md:basis-2/4 transition-all duration-500 relative cursor-pointer overflow-hidden group rounded-3xl shadow-xl"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80"
+              alt="Latte Art"
+              class="w-full h-[300px] md:h-[460px] object-cover group-hover:scale-105 transition duration-700"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 glass text-white"
+            >
+              <h3 class="text-xl font-bold">Crafting Latte Masterpieces</h3>
+              <p class="text-sm text-[#e4d6c8]/80">
+                Every swirl tells a story.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="card basis-full md:basis-1/4 transition-all duration-500 relative cursor-pointer overflow-hidden group rounded-3xl shadow-xl"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80"
+              alt="Beans"
+              class="w-full h-[300px] md:h-[460px] object-cover group-hover:scale-105 transition duration-700"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 glass text-white"
+            >
+              <h3 class="text-xl font-bold">Origin of Our Beans</h3>
+              <p class="text-sm text-[#e4d6c8]/80">From soil to sip.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="card basis-full md:basis-1/4 transition-all duration-500 relative cursor-pointer overflow-hidden group rounded-3xl shadow-xl"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80"
+              alt="Coffee Moments"
+              class="w-full h-[300px] md:h-[460px] object-cover group-hover:scale-105 transition duration-700"
+            />
+            <div
+              class="absolute inset-0 flex flex-col justify-end p-6 glass text-white"
+            >
+              <h3 class="text-xl font-bold">Moments with Every Sip</h3>
+              <p class="text-sm text-[#e4d6c8]/80">The taste of memories.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOpenIcon = document.getElementById("menu-open");
+      const menuCloseIcon = document.getElementById("menu-close");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        menuOpenIcon.classList.toggle("hidden");
+        menuCloseIcon.classList.toggle("hidden");
+      });
+
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          cards.forEach((c) => {
+            c.classList.remove("md:basis-2/4");
+            c.classList.add("md:basis-1/4");
+          });
+          card.classList.remove("md:basis-1/4");
+          card.classList.add("md:basis-2/4");
+        });
+      });
+    </script>
   </body>
 </html>
