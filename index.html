@@ -108,7 +108,7 @@
       <!-- hero section -->
       <section
         id="hero"
-        class="relative flex flex-col justify-center items-center h-[500px] md:h-[650px] md:rounded-2xl bg-[url('./public/images/hero.jpg')] bg-cover bg-center overflow-hidden text-center"
+        class="relative flex flex-col justify-center items-center h-[500px] md:h-[650px] md:rounded-2xl bg-[url('/images/hero.jpg')] bg-cover bg-center overflow-hidden text-center"
       >
         <div class="absolute inset-0 bg-black/30 md:rounded-2xl"></div>
         <div
@@ -398,76 +398,8 @@
           <div class="md:w-1/2 flex justify-center">
             <div
               class="w-[250px] sm:w-[300px] md:w-[350px] aspect-square bg-cover bg-center rounded-xl overflow-hidden shadow-md"
-              style="background-image: url('public/images/subs.jpg')"
+              style="background-image: url('images/subs.jpg')"
             ></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonial Section -->
-      <section class="py-20 px-4 md:px-8">
-        <div
-          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10"
-        >
-          <!-- Left: Image -->
-          <div class="md:w-1/2 flex justify-center relative">
-            <div
-              class="relative w-[280px] md:w-[350px] aspect-square rounded-full overflow-hidden shadow-xl z-10"
-            >
-              <img
-                src="/images/testimonial.jpg"
-                alt="Happy Customer"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Coffee Cup Decoration -->
-            <img
-              src="/images/coffee-cup.png"
-              alt="Coffee Cup"
-              class="absolute -left-10 -bottom-10 w-32 md:w-40 z-20"
-            />
-          </div>
-
-          <!-- Right: Content -->
-          <div class="md:w-1/2 text-center md:text-left">
-            <h3
-              class="text-3xl md:text-4xl font-semibold text-[#1b1a1f] mb-3 leading-snug"
-            >
-              Arabica & Robusta <br />
-              New Exclusive Coffee
-            </h3>
-            <p class="text-[#3c3c3c] mb-6 text-sm md:text-base">
-              Maecenas dapibus mattis eros, at fermentum sapien malesuada sit
-              amet. Quisque in sollicitudin eros. Aliquam eget sapien sed orci
-              accumsan interdum ut ac malesuada lorem. Integer non pulvinar
-              metus.
-            </p>
-
-            <!-- Info & Buttons -->
-            <div class="mb-5">
-              <p
-                class="text-[#1b1a1f] font-semibold flex items-center gap-2 mb-2"
-              >
-                📄 <span>Download price</span>
-              </p>
-              <p class="text-[#3c3c3c] text-sm">📞 3-068-387-01-39</p>
-            </div>
-
-            <div
-              class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
-            >
-              <button
-                class="bg-[#1b1a1f] text-white px-5 py-2 rounded-full hover:bg-[#333] transition"
-              >
-                READ MORE
-              </button>
-              <button
-                class="bg-[#c9a27e] text-white px-5 py-2 rounded-full hover:bg-[#d9b68c] transition"
-              >
-                SHOP NOW
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -514,31 +446,31 @@
         {
           name: "Cappuccino",
           price: "Rp 42.000",
-          img: "https://images.unsplash.com/photo-1615484477877-78ad2c445fc4?auto=format&fit=crop&w=300&q=80",
+          img: "public/images/menu/cappuccino.jpg",
           desc: "A bold espresso base layered with steamed milk and a fluffy foam topping.",
         },
         {
           name: "Americano",
           price: "Rp 30.000",
-          img: "https://images.unsplash.com/photo-1532634896-26909d0d4b6a?auto=format&fit=crop&w=300&q=80",
+          img: "public/images/menu/americano.jpg",
           desc: "Espresso diluted with hot water for a smooth, black coffee experience.",
         },
         {
           name: "Mocha",
           price: "Rp 45.000",
-          img: "https://images.unsplash.com/photo-1572441710532-4784c1f0e9e2?auto=format&fit=crop&w=300&q=80",
+          img: "public/images/menu/mocha.jpg",
           desc: "A rich fusion of chocolate, espresso, and milk—perfect for sweet tooths.",
         },
         {
           name: "Macchiato",
           price: "Rp 38.000",
-          img: "https://images.unsplash.com/photo-1517701604595-6de5ecf3e1b1?auto=format&fit=crop&w=300&q=80",
+          img: "public/images/menu/macchiato.jpg",
           desc: "Espresso marked with a dash of frothy milk foam for a stronger taste.",
         },
         {
           name: "Flat White",
           price: "Rp 39.000",
-          img: "https://images.unsplash.com/photo-1585222515065-60a3b53f3025?auto=format&fit=crop&w=300&q=80",
+          img: "public/images/menu/flat-white.jpg",
           desc: "Creamy and balanced, like a latte with less foam and more texture.",
         },
       ];
