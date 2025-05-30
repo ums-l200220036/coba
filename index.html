@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
     <title>Responsive Navbar Tailwind + JS</title>
+    <style>
+      .hero-section {
+        background-image: url("src/images/hero.jpg");
+      }
+    </style>
   </head>
   <body class="bg-[#1b1a1f]">
     <header class="absolute top-0 left-0 w-full py-2 md:px-8 md:py-4 z-50">
@@ -13,7 +18,7 @@
       >
         <!-- Logo -->
         <div class="flex items-center gap-2">
-          <img src="public/images/logo.png" alt="Logo" class="w-10 h-10" />
+          <img src="src/images/logo.png" alt="Logo" class="w-10 h-10" />
           <span class="text-white font-semibold text-3xl ml-3">Coffee</span>
         </div>
 
@@ -108,7 +113,7 @@
       <!-- hero section -->
       <section
         id="hero"
-        class="relative flex flex-col justify-center items-center h-[500px] md:h-[650px] md:rounded-2xl bg-[url('/images/hero.jpg')] bg-cover bg-center overflow-hidden text-center"
+        class="hero-section relative flex flex-col justify-center items-center h-[500px] md:h-[650px] md:rounded-2xl bg-cover bg-center overflow-hidden text-center"
       >
         <div class="absolute inset-0 bg-black/30 md:rounded-2xl"></div>
         <div
@@ -227,10 +232,8 @@
 
       <section class="px-6 py-24 max-w-7xl mx-auto">
         <div class="text-center mb-14">
-          <p
-            class="text-sm tracking-wide uppercase text-[#c9a27e] font-semibold"
-          >
-            (03) Our Work
+          <p class="text-sm tracking-wide text-white">
+            (02) <span class="font-bold">Our Work</span>
           </p>
           <h2
             class="text-4xl md:text-5xl font-extrabold leading-tight text-[#f5eee6] mt-2"
@@ -308,7 +311,7 @@
       <section class="px-4 py-16">
         <div class="max-w-7xl mx-auto">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left text-white"
+            class="text-3xl text-[#d4b089] md:text-4xl font-bold mb-4 text-center md:text-left"
           >
             Coffee Menu Catalog
           </h2>
@@ -398,14 +401,24 @@
           <div class="md:w-1/2 flex justify-center">
             <div
               class="w-[250px] sm:w-[300px] md:w-[350px] aspect-square bg-cover bg-center rounded-xl overflow-hidden shadow-md"
-              style="background-image: url('images/subs.jpg')"
+              style="background-image: url('src/images/subs.jpg')"
             ></div>
           </div>
         </div>
       </section>
     </main>
 
+    <footer>
+      <div class="bg-[#1b1a1f] text-white py-8 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-sm mb-2">© 2023 Coffee. All rights reserved.</p>
+          <p class="text-xs text-gray-400">Crafted with love by Your Name</p>
+        </div>
+      </div>
+    </footer>
+
     <script>
+      // toogler menu
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
       const menuOpenIcon = document.getElementById("menu-open");
@@ -417,6 +430,7 @@
         menuCloseIcon.classList.toggle("hidden");
       });
 
+      // galery cards interaction
       const cards = document.querySelectorAll(".card");
 
       cards.forEach((card) => {
@@ -430,47 +444,48 @@
         });
       });
 
+      // Coffee Catalog Slider
       const coffeeList = [
         {
           name: "Espresso",
           price: "Rp 35.000",
-          img: "/images/menu/espresso.jpg",
+          img: "src/images/menu/espresso.jpg",
           desc: "A classic Italian-style coffee brewed under pressure, delivering a bold and aromatic flavor.",
         },
         {
           name: "Latte",
           price: "Rp 40.000",
-          img: "/images/menu/latte.jpg",
+          img: "src/images/menu/latte.jpg",
           desc: "Smooth and milky with a shot of espresso—perfectly balanced for a mellow experience.",
         },
         {
           name: "Cappuccino",
           price: "Rp 42.000",
-          img: "/images/menu/cappuccino.jpg",
+          img: "src/images/menu/cappuccino.jpg",
           desc: "A bold espresso base layered with steamed milk and a fluffy foam topping.",
         },
         {
           name: "Americano",
           price: "Rp 30.000",
-          img: "/images/menu/americano.jpg",
+          img: "src/images/menu/americano.jpg",
           desc: "Espresso diluted with hot water for a smooth, black coffee experience.",
         },
         {
           name: "Mocha",
           price: "Rp 45.000",
-          img: "/images/menu/mocha.jpg",
+          img: "src/images/menu/mocha.jpg",
           desc: "A rich fusion of chocolate, espresso, and milk—perfect for sweet tooths.",
         },
         {
           name: "Macchiato",
           price: "Rp 38.000",
-          img: "/images/menu/macchiato.jpg",
+          img: "src/images/menu/macchiato.jpg",
           desc: "Espresso marked with a dash of frothy milk foam for a stronger taste.",
         },
         {
           name: "Flat White",
           price: "Rp 39.000",
-          img: "/images/menu/flat-white.jpg",
+          img: "src/images/menu/flat-white.jpg",
           desc: "Creamy and balanced, like a latte with less foam and more texture.",
         },
       ];
